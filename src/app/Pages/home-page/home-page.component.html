@@ -1,11 +1,14 @@
 <div class="container mt-2">
-    <div class="card" style="width: 18rem;" *ngFor="let itom of this._state.recipe" routerLink="/dashboard/details/{{itom.creator_id}}"  >
-        <img src={{itom.image_url}} class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">{{itom.name}}</h5>
-            <p class="card-text">{{itom.description}} </p>
-            <p class="card-text">{{itom.creatorName}} </p>
-        </div>
+  <div class="card m-4" style="width: 18rem;" *ngFor="let itom of this._state.recipe"
+    routerLink="/dashboard/details/{{itom.creator_id}}">
+
+    <img src={{itom.image_url}} class="card-img-top " alt="..." style="width:200px ; height:150px">
+
+    <div class="card-body">
+      <h5 class="card-title"> <b>Product Name :</b>  {{itom.name}}</h5>
+      <p class="card-text"> <b>Product Desc. :</b> {{itom.description}} </p>
+      <p class="card-text"><b> Product Creator Name :</b> {{itom.creatorName}} </p>
     </div>
-    {{this._state.recipe | json}}
+  </div>
+
 </div>

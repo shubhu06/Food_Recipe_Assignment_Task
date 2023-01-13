@@ -1,0 +1,9 @@
+.details-box{
+  border: 1px solid;
+  width: 600px;
+  box-shadow: 3px 3px 3px 3px black;
+}
+b{
+  color: rgb(61, 193, 145);
+  text-decoration: underline;
+}

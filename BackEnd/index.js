@@ -4,7 +4,7 @@ const app = express();
 const cors = require ('cors');
 app.use(cors());
 
-const  port = 2001; 
+const  port = 2001;
 
 const jwt = require('jsonwebtoken')
 pass = 'sfdbgnb dmnv jhbrgh dnv sdhfbhsdskd';
@@ -57,7 +57,7 @@ app.post('/login', (req, res) => {
                 res.status(200).send({
                     success: true,
                     msg: 'Login Succefully',
-                    data: token 
+                    data: token
                 });
             }
 
@@ -112,7 +112,7 @@ app.get('/detailed_step/:id', (req, res) => {
 // get All details...
 app.get('/details/:id', (req, res) => {
     const id = req.params.id;
-    const query = 'SELECT recipe.name, user.name, recipe.description, recipe.image_url, ingredients.amount, process.step FROM recipe, user, ingredients, process WHERE recipe.creator_id = user.id AND process.recipe_id = recipe.id AND ingredients.recipe_id = recipe.id AND user.id = ?';
+    const query = 'SELECT  user.name , recipe.description, recipe.image_url, ingredients.amount, process.step FROM recipe, user, ingredients, process WHERE recipe.creator_id = user.id AND process.recipe_id = recipe.id AND ingredients.recipe_id = recipe.id AND user.id = ?';
     connection.query(query, [id], (err, result) => {
         if (err) {
             res.status(500).send({

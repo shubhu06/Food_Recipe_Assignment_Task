@@ -1,1 +1,15 @@
-{{ this._state.details | json}}
+<!-- {{ this._state.details | json}} -->
+
+<div class="container mt-4 " *ngFor="let itom of this._state.details">
+  <div class="details-box p-4 ">
+    <h3 class="mt-1"> <b>Creator Name :</b> {{itom.name}} </h3>
+    <p class="mt-1"> <b> Description :</b> {{itom.description}} </p>
+    
+    <p> <b>Image : </b> </p>
+    <img src="{{itom.image_url}}" alt="" style="width: 300px;">
+
+    <h4 class="mt-3"> <b>Amount :</b> {{itom.amount}} &#8377; </h4>
+    <p class="mt-1"> <b> Step : </b> {{itom.step}} </p>
+    <p> </p>
+  </div>
+</div>
